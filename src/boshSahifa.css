@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.homePage {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+        url("/burger-bg.png") center center / cover fixed;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    width: 1250px;
+    max-width: 94%;
+    height: 360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+    position: relative;
+    background: rgba(15, 15, 15, 0.97);
+    border: 1px solid rgba(255, 59, 0, 0.35);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 59, 0, 0.12),
+                0 15px 45px rgba(0, 0, 0, 0.7);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 59, 0, 0.08),
+        transparent
+    );
+    animation: lightMove 5s infinite;
+}
+
+@keyframes lightMove {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+.heroText {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.smallText {
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 59, 0, 0.6);
+    border-radius: 20px;
+    background: rgba(255, 59, 0, 0.12);
+    color: #ff4b16;
+    font-size: 14px;
+    font-weight: bold;
+    animation: fadeIn 1s ease;
+}
+
+.heroText h1 {
+    margin-bottom: 12px;
+    color: white;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.05;
+    white-space: nowrap;
+    animation: fadeIn 1s ease;
+}
+
+.heroText h1 span {
+    color: #ff3b00;
+    text-shadow: 0 0 18px rgba(255, 59, 0, 0.4);
+}
+
+.heroText h2 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.heroText p {
+    width: 500px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.heroText a {
+    width: fit-content;
+    text-decoration: none;
+}
+
+.heroText button {
+    padding: 12px 24px;
+    border: 1px solid #ff3b00;
+    border-radius: 10px;
+    background: #ff3b00;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 59, 0, 0.2);
+}
+
+.heroText button:hover {
+    background: #ff521c;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 59, 0, 0.5);
+}
+
+.homeImage {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.homeImage::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(255, 59, 0, 0.12);
+    filter: blur(35px);
+}
+
+.homeImage img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 230px;
+    height: 210px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 15px rgba(255, 59, 0, 0.22));
+    animation: burgerFloat 4s ease-in-out infinite;
+}
+
+@keyframes burgerFloat {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.homeCards {
+    width: 1250px;
+    max-width: 94%;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.homeCards > div {
+    height: 105px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.97);
+    border: 1px solid rgba(255, 59, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.homeCards > div:hover {
+    transform: translateY(-5px);
+    border-color: #ff3b00;
+    box-shadow: 0 0 20px rgba(255, 59, 0, 0.2);
+}
+
+.homeCards h3 {
+    margin-bottom: 6px;
+    color: #ff4b16;
+    font-size: 17px;
+}
+
+.homeCards p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        width: 94%;
+        height: 360px;
+        padding: 25px 30px;
+    }
+
+    .heroText h1 {
+        font-size: 40px;
+    }
+
+    .heroText h2 {
+        font-size: 21px;
+    }
+
+    .homeImage img {
+        width: 200px;
+        height: 190px;
+    }
+
+    .homeCards {
+        width: 94%;
+    }
+}
+
+@media (max-width: 700px) {
+    .homePage {
+        padding-top: 120px;
+        background-attachment: scroll;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 580px;
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .heroText {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .heroText h1 {
+        font-size: 36px;
+        white-space: normal;
+    }
+
+    .heroText h2 {
+        font-size: 21px;
+    }
+
+    .heroText p {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .homeImage {
+        width: 100%;
+        height: 230px;
+    }
+
+    .homeImage img {
+        width: 180px;
+        height: 170px;
+    }
+
+    .homeCards {
+        grid-template-columns: 1fr;
+    }
+}
